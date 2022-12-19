@@ -11,7 +11,8 @@ class NumberToWords
   end
 
   def call
-    return 'zero' if @number.to_i.zero?
+    return 'zero' if @number.chars.count == 1 && @number.to_i.zero?
+    return 'invalid parameter' if (@number.chars.count > 1 && @number.to_i.zero?) || @number.scan(/\D/).any?
     convert_number_into_array
     iterate_and_slice_array
     sanitize
@@ -45,15 +46,15 @@ def handle_printing(number_length)
     when 3
       @words << ' '
       @words << UNITS[@digits[0].to_i]
-      @words << ' hundred' unless @digits.include?('0')
-      @words << ' and' unless @digits.include?('0')
+      @words << ' hundred'
+      @words << ' and'
       if @digits[1] == '1'
         @digits[2] = @digits[2].to_i + 10
       else
       @words << ' '
       @words << TENS[@digits[1].to_i]
       end
-      @words << ' '
+      @words << ' ' if @digits[2].to_i > 9
       @words << UNITS[@digits[2].to_i]
     when 2
       if @digits[0] == '1'
