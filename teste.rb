@@ -1,64 +1,6 @@
-UNITS = [
-    '',
-    'one',
-    'two',
-    'three',
-    'four',
-    'five',
-    'six',
-    'seven',
-    'eight',
-    'nine',
-    'ten',
-    'eleven',
-    'twelve',
-    'thirteen',
-    'fourteen',
-    'fifteen',
-    'sixteen',
-    'seventeen',
-    'eighteen',
-    'nineteen',
-].freeze
-
-TENS = [
-    '',
-    '',
-    'twenty',
-    'thirty',
-    'forty',
-    'fifty',
-    'sixty',
-    'seventy',
-    'eighty',
-    'ninety',
-].freeze
-
-SCALES = [
-    '',
-    'thousand',
-    'million',
-    'billion',
-    'trillion',
-    'quadrillion',
-    'quintillion',
-    'sextillion',
-    'septillion',
-    'octillion',
-    'nonillion',
-    'decillion',
-    'undecillion',
-    'duodecillion',
-    'tredecillion',
-    'quatttuor-decillion',
-    'quindecillion',
-    'sexdecillion',
-    'septen-decillion',
-    'octodecillion',
-    'novemdecillion',
-    'vigintillion',
-    'centillion',
-].freeze
+require_relative("./constants/units")
+require_relative("./constants/tens")
+require_relative("./constants/scales")
 
 number = 99999999
 
